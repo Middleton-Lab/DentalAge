@@ -6,7 +6,7 @@
 \alias{DentalAge}
 \title{DentalAge}
 \description{
-Long description...
+Estimate dental age from scores of dental development.
 }
 \details{
 \tabular{ll}{ Package: \tab DentalAge\cr

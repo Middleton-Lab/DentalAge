@@ -1,6 +1,6 @@
 #' DentalAge
 #'
-#' Long description...
+#' Estimate dental age from scores of dental development.
 #'
 #' \tabular{ll}{ Package: \tab DentalAge\cr
 #'               Type: \tab Package\cr
