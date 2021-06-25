@@ -10,7 +10,8 @@ estimate_dental_age(means)
 \item{means}{matrix (6 x 2) of means and standard deviations}
 }
 \value{
-numeric vector with estimated age and variance
+numeric vector with log estimated age, log total variance, and
+estimated age
 }
 \description{
 Given a matrix of means and sds, estimate dental age following the method

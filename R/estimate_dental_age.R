@@ -7,7 +7,8 @@
 #'
 #' @param means matrix (6 x 2) of means and standard deviations
 #'
-#' @return numeric vector with estimated age and variance
+#' @return numeric vector with log estimated age, log total variance, and
+#' estimated age
 #' @export
 #'
 #' @examples
@@ -42,6 +43,8 @@ estimate_dental_age <- function(means) {
     # Total variance
     vv <- var_tot + var_between_tooth
   }
-  return(c(age, vv))
+  return(c("log_age" = age,
+           "log_total_var" = vv,
+           "dental_age" = exp(age) / exp(vv)))
 }
 

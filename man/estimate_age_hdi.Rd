@@ -4,10 +4,10 @@
 \alias{estimate_age_hdi}
 \title{Estimate HDI from dental age estimate}
 \usage{
-estimate_age_hdi(age_sd, n = 1e+05, interval = 0.5)
+estimate_age_hdi(age_est, n = 1e+05, interval = 0.5)
 }
 \arguments{
-\item{age_sd}{numeric vector output from \code{estimate_dental_age()}.}
+\item{age_est}{numeric vector output from \code{estimate_dental_age()}.}
 
 \item{n}{numeric number of samples to produce. Defaults to 1e5 for speed.
 Increase this number for investigating the tails of the distribution.}
@@ -22,6 +22,6 @@ Estimate HDI from dental age estimate
 }
 \examples{
 means <- get_means_for_scores(x = ExampleScores[1, ])
-age <- estimate_dental_age(means)
-estimate_age_hdi(age)
+age_est <- estimate_dental_age(means)
+estimate_age_hdi(age_est)
 }
