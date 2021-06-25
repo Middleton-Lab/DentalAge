@@ -4,10 +4,12 @@
 \alias{get_means_for_scores}
 \title{Lookup mean and sd for a sex / tooth / stage combination}
 \usage{
-get_means_for_scores(x)
+get_means_for_scores(x, verbose = TRUE)
 }
 \arguments{
-\item{x}{Row data frame}
+\item{x}{data frame with one row}
+
+\item{verbose}{boolean flag for printing diagnostic messages}
 }
 \value{
 6 x 2 matrix with means and standard deviations for each tooth.

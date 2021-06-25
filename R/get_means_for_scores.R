@@ -4,7 +4,8 @@
 #' "M2", and "M3" that contain scores (or NA). A matrix of means and standard
 #' deviations for each tooth is returned.
 #'
-#' @param x Row data frame
+#' @param x data frame with one row
+#' @param verbose boolean flag for printing diagnostic messages
 #'
 #' @return 6 x 2 matrix with means and standard deviations for each tooth.
 #' @export
@@ -12,7 +13,7 @@
 #' @examples
 #' get_means_for_scores(x = ExampleScores[1, ])
 #'
-get_means_for_scores <- function(x) {
+get_means_for_scores <- function(x, verbose = TRUE) {
   # x is 1 row of values
 
   x <- as.data.frame(x) # Need data.frame for proper subsetting below
@@ -35,7 +36,9 @@ get_means_for_scores <- function(x) {
       as.numeric()
   }
   if (x$M1 == "C.i" | is.na(x$M1)) {
-    message("M1 is stage C.i or missing, dropping from age estimation.")
+    if (verbose) {
+      message("M1 is stage C.i or missing, dropping from age estimation.")
+    }
     means[4, ] <- c(NA, NA)
   }
 

@@ -6,6 +6,7 @@
 #' from the Fels Longitudinal Study. Anat Rec 302:1733–1753.
 #'
 #' @param means matrix (6 x 2) of means and standard deviations
+#' @param verbose boolean flag for printing diagnostic messages
 #'
 #' @return numeric vector with log estimated age, log total variance, and
 #' estimated age
@@ -15,16 +16,20 @@
 #' means <- get_means_for_scores(x = ExampleScores[1, ])
 #' estimate_dental_age(means)
 #'
-estimate_dental_age <- function(means) {
+estimate_dental_age <- function(means, verbose = TRUE) {
   if (sum(is.na(means)) == 12) { # All teeth are NA
     age <- NA
     vv <- NA
-    message("Warning: No age estimate")
+    if (verbose) {
+      message("Warning: No age estimate")
+    }
   } else {
     m <- means$log_mu[!is.na(means$log_mu)]
     s <- means$log_sd[!is.na(means$log_sd)]
 
-    if (length(m) == 1) message("Warning: Estimating from only 1 tooth.")
+    if (length(m) == 1 & verbose) {
+      message("Warning: Estimating from only 1 tooth.")
+    }
 
     # Convert to precision, calculate relative precision
     precision <- 1 / s^2

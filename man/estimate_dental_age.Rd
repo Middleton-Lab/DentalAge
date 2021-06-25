@@ -4,10 +4,12 @@
 \alias{estimate_dental_age}
 \title{Estimate dental age}
 \usage{
-estimate_dental_age(means)
+estimate_dental_age(means, verbose = TRUE)
 }
 \arguments{
 \item{means}{matrix (6 x 2) of means and standard deviations}
+
+\item{verbose}{boolean flag for printing diagnostic messages}
 }
 \value{
 numeric vector with log estimated age, log total variance, and

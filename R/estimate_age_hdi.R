@@ -17,10 +17,11 @@ estimate_age_hdi <- function(age_est, n = 1e5, interval = 0.5) {
     hdi_lo <- NA
     hdi_hi <- NA
   } else {
-    samp <- rlnorm(n, age_est["log_age"], sqrt(age_est["log_total_var"]))
+    log_age <- as.numeric(age_est["log_age"])
+    log_total_var <- as.numeric(age_est["log_total_var"])
+    samp <- rlnorm(n, log_age, sqrt(log_total_var))
     hdi_int <- HDInterval::hdi(samp, credMass = interval)
-    hdi_lo <- hdi_int[1]
-    hdi_hi <- hdi_int[2]
   }
-  return(c("lower_bound" = hdi_lo, "lower_bound" = hdi_hi))
+  return(c("lower_bound" = as.numeric(hdi_int[1]),
+           "upper_bound" = as.numeric(hdi_int[2])))
 }
