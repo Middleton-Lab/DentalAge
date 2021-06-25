@@ -1,16 +1,24 @@
 Package: DentalAge
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Estimate Dental Age
+Version: 0.1
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Kevin",
+           family = "Middleton",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "middletonk@missouri.edi",
+           comment = c(ORCID = "0000-0003-4704-1064"))
+Description: Estimate dental age given a set of dental scores for six teeth
+    following the method of Šešelj M, Sherwood RJ, Konigsberg LW. 2019. Timing
+    of Development of the Permanent Mandibular Dentition: New Reference Values
+    from the Fels Longitudinal Study. Anat Rec 302:1733–1753.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    HDInterval,
+    dplyr,
+    magrittr
