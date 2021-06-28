@@ -22,4 +22,11 @@ deviations for each tooth is returned.
 \examples{
 get_means_for_scores(x = ExampleScores[1, ])
 
+# Example from Seselj et al. (2019)
+x <- data.frame(Sex = "M", Canine = "R.25", P3 = "R.25",
+                P4 = "R.i", M1 = "A.5",
+                M2 = "R.25", M3 = NA)
+means <- get_means_for_scores(x)
+estimate_dental_age(means)
+
 }

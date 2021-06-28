@@ -3,6 +3,7 @@
 export(estimate_age_hdi)
 export(estimate_dental_age)
 export(get_means_for_scores)
+export(recode_score)
 export(score_to_stage)
 importFrom(dplyr,case_when)
 importFrom(dplyr,filter)
