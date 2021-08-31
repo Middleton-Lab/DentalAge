@@ -22,8 +22,7 @@ Imports:
     HDInterval,
     dplyr,
     magrittr,
-    shiny,
-    rmarkdown
+    shiny
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
