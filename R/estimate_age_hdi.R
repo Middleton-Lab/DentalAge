@@ -26,6 +26,14 @@ estimate_age_hdi <- function(age_est, n = 1e5, interval = 0.5) {
            "upper_bound" = hdi_hi))
 }
 
+#' Generate sample for age estimate
+#'
+#' @param age_est Result of call to estimate_dental_age()
+#' @param n Number of samples
+#'
+#' @return n samples
+#' @export
+#'
 age_samples <- function(age_est, n) {
   log_age <- as.numeric(age_est["log_age"])
   log_total_var <- as.numeric(age_est["log_total_var"])
