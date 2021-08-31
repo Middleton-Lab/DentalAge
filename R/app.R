@@ -1,5 +1,7 @@
 library(shiny)
-library(rmarkdown)
+library(tibble)
+library(ggplot2)
+library(DentalAge)
 
 C_P3_P4_Scores <- c("Missing", "C.i", "C.co", "C.oc", "Cr.5", "Cr.75", "Cr.c",
                     "R.i", "R.25", "R.5", "R.75", "R.c", "A.5")
