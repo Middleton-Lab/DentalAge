@@ -22,7 +22,7 @@ score_to_stage <- function(x) {
     x == 9 ~ "R.25",
     x == 10 ~ "R.5",
     x == 11 ~ "R.75",
-    x == 12 ~ "Rc",
+    x == 12 ~ "R.c",
     x == 13 ~ "A.5",
     x == 14 ~ NA_character_,
     is.na(x) ~ NA_character_
